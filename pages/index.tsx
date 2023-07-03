@@ -1,6 +1,13 @@
+import makeFonePayPayment from '@/payment-gateways/fonepay'
+import payFromKhalti, { validateKhaltiPayment } from '@/payment-gateways/khalti';
 import Head from 'next/head'
+import { useEffect } from 'react'
 
 export default function Home() {
+  useEffect(() => {
+    payFromKhalti()
+    // makeFonePayPayment()
+  }, [])
   return (
     <>
       <Head>
@@ -10,7 +17,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-
       </main>
     </>
   )
